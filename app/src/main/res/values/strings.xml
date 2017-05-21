@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Where To?</string>
+    <string name="hello_world">Hello, world!</string>
+    <string name="title_activity_temp">TempActivity</string>
+</resources>
