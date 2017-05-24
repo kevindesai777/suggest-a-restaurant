@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Where To?</string>
-    <string name="hello_world">Hello, world!</string>
-    <string name="title_activity_temp">TempActivity</string>
+    <string name="hello_world">Hey there, hungry fellow!</string>
     <string name="where_to_go">Where To Go Today?</string>
 </resources>

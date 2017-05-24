@@ -6,27 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.app.kev.whereto.activities.MainActivity">
 
-    <TextView
-        android:id="@+id/hello_world"
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/suggest_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:text="@string/where_to_go"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/textColorSecondary"/>
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:lottie_autoPlay="false" />
+<include layout="@layout/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

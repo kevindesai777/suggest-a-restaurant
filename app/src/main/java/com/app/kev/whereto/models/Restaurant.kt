@@ -12,16 +12,18 @@ open class Restaurant() : RealmObject() {
     private var name: String = ""
     private var priceRange: String = ""
     private var dist: String = ""
+    private var veggieFriendly: Boolean = false
 
     @Ignore
     var pricerange: PriceRange = PriceRange.CHEAP
     @Ignore
     var distance: Transport = Transport.WALK
 
-    constructor(name : String, priceRange: PriceRange, distance : Transport) : this() {
+    constructor(name : String, priceRange: PriceRange, distance : Transport, veggieFriendly : Boolean) : this() {
         this.name = name
         this.pricerange = priceRange
         this.distance = distance
+        this.veggieFriendly = veggieFriendly
 
         setPriceRange(priceRange)
         setTransport(distance)
@@ -41,5 +43,9 @@ open class Restaurant() : RealmObject() {
 
     fun getTransport(): Transport {
         return Transport.valueOf(dist)
+    }
+
+    fun getName(): String {
+        return this.name
     }
 }
