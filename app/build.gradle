@@ -34,5 +34,7 @@ dependencies {
     compile 'com.airbnb.android:lottie:2.0.0-rc1'
 
     compile 'com.android.support:design:25.3.1'
+    compile 'com.nex3z:toggle-button-group:1.0.1'
+
 
 }
