@@ -15,14 +15,10 @@ import com.app.kev.whereto.models.Restaurant
 
 import io.realm.Realm
 
-import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.io.IOException
 import kotlin.properties.Delegates
-import io.realm.RealmResults
 import android.preference.PreferenceManager
-import android.content.SharedPreferences
-import android.R.id.edit
 import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 
@@ -49,8 +45,6 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener { view ->
             initializeAnimation()
         }
-
-
     }
 
     fun initializeAnimation() {
@@ -71,8 +65,6 @@ class MainActivity : AppCompatActivity() {
                 hello_world.setText("Anim complete")
                 animation_view.visibility = View.INVISIBLE
                 suggest_place.isClickable = true
-//                val list = realm.where(Restaurant::class.java).findAll()
-//                hello_world.setText(list.size.toString())
 
                 val random = Random()
                 val listResto = realm.where(Restaurant::class.java).findAll()
@@ -100,22 +92,33 @@ class MainActivity : AppCompatActivity() {
 
             deleteDatabase()
 
-            createRealDatabase(Restaurant("1117 Cafe", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Bagel Boys", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Tropical Smoothie", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Atlanta Bread", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Royal Oak Pub", PriceRange.CHEAP, Transport.WALK, false))
-            createRealDatabase(Restaurant("Tindrum Asian Kitchen", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Carraba's Italian Grill", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Mimi's Cafe", PriceRange.MODERATE, Transport.WALK, true))
-            createRealDatabase(Restaurant("Zoes Kitchen", PriceRange.CHEAP, Transport.WALK, false))
-            createRealDatabase(Restaurant("la Madeleine French Bakery and Café", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Bawarchi Biryani", PriceRange.MODERATE, Transport.DRIVE, true))
-            createRealDatabase(Restaurant("Perimeter Sweet Tomatoes", PriceRange.CHEAP, Transport.WALK, true))
-            createRealDatabase(Restaurant("Rumi's Kitchen", PriceRange.EXPENSIVE, Transport.DRIVE, true))
-            createRealDatabase(Restaurant("Happy Sumo", PriceRange.CHEAP, Transport.WALK, false))
-            createRealDatabase(Restaurant("Chick-fil-A", PriceRange.CHEAP, Transport.WALK, false))
-            createRealDatabase(Restaurant("Galla's Pizza", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("1117 Cafe", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Bagel Boys", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Tropical Smoothie", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Atlanta Bread", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Royal Oak Pub", PriceRange.CHEAP, Transport.WALK, false))
+            createRealmDatabase(Restaurant("Tindrum Asian Kitchen", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Carraba's Italian Grill", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Mimi's Cafe", PriceRange.MODERATE, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Zoes Kitchen", PriceRange.CHEAP, Transport.WALK, false))
+            createRealmDatabase(Restaurant("la Madeleine French Bakery and Café", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Bawarchi Biryani", PriceRange.MODERATE, Transport.DRIVE, true))
+            createRealmDatabase(Restaurant("Perimeter Sweet Tomatoes", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Rumi's Kitchen", PriceRange.EXPENSIVE, Transport.DRIVE, true))
+            createRealmDatabase(Restaurant("Happy Sumo", PriceRange.CHEAP, Transport.WALK, false))
+            createRealmDatabase(Restaurant("Chick-fil-A", PriceRange.CHEAP, Transport.WALK, false))
+            createRealmDatabase(Restaurant("Galla's Pizza", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("JoeyD's Oak Room", PriceRange.MODERATE, Transport.WALK, false))
+            createRealmDatabase(Restaurant("Taco Mac", PriceRange.MODERATE, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Outback Steakhouse", PriceRange.MODERATE, Transport.WALK, false))
+            createRealmDatabase(Restaurant("Panera Bread", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Chipotle Mexican Grill", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Your Pie", PriceRange.CHEAP, Transport.WALK, true))
+            createRealmDatabase(Restaurant("Fleming's Prime Steakhouse", PriceRange.EXPENSIVE, Transport.DRIVE, false))
+            createRealmDatabase(Restaurant("Tin Lizzy's Catina", PriceRange.MODERATE, Transport.DRIVE, false))
+            createRealmDatabase(Restaurant("Shane's Rib Shack", PriceRange.MODERATE, Transport.WALK, false))
+            createRealmDatabase(Restaurant("Boneheads", PriceRange.CHEAP, Transport.DRIVE, false))
+
 
             val editor = preferences.edit()
             editor.putBoolean("dataInitDone", true)
@@ -140,7 +143,7 @@ class MainActivity : AppCompatActivity() {
         return json
     }
 
-    fun createRealDatabase(restaurant: Restaurant) {
+    fun createRealmDatabase(restaurant: Restaurant) {
         realm.beginTransaction()
         realm.copyToRealm(restaurant)
         realm.commitTransaction()
