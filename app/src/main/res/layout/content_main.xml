@@ -17,61 +17,89 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/hello_world"
-        app:layout_constraintBottom_toTopOf="@+id/suggest_place"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/veggieFriendlyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.45" />
 
-    <ToggleButton
+    <CheckBox
+        android:id="@+id/veggieFriendlyCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textOff="$"
-        android:textOn="$"
-        android:background="@color/colorAccent"
-
-        android:checked="true"
-        android:id="@+id/toggleButton11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintEnd_toStartOf="@+id/toggleButton10"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/hello_world"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/suggest_place" />
-
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="$$"
-        android:textOn="$$"
-        android:checked="true"
-        android:id="@+id/toggleButton10"
-        android:background="@color/colorAccent"
-        app:layout_constraintStart_toEndOf="@+id/toggleButton11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintEnd_toStartOf="@+id/toggleButton12"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/hello_world"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/suggest_place" />
-
-    <ToggleButton
-        android:layout_width="92dp"
-        android:layout_height="45dp"
-        android:textOff="$$$"
-        android:textOn="$$$"
-        android:background="@color/colorAccent"
         android:checked="true"
-        android:id="@+id/toggleButton12"
-        app:layout_constraintStart_toEndOf="@+id/toggleButton10"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="@string/veggie_friendly"
+        app:layout_constraintBottom_toTopOf="@+id/toggleModerate"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/hello_world"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hello_world" />
+
+    <CheckBox
+        android:id="@+id/driveCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/suggest_place" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:checked="false"
+        android:text="@string/willyouDrive"
+        app:layout_constraintBottom_toTopOf="@+id/veggieFriendlyCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hello_world" />
+
+    <ToggleButton
+        android:id="@+id/toggleCheap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:checked="true"
+        android:textOff="@string/price_cheap"
+        android:textOn="@string/price_cheap"
+        app:layout_constraintBottom_toTopOf="@+id/suggest_place"
+        app:layout_constraintEnd_toStartOf="@+id/toggleModerate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veggieFriendlyCheckBox"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <ToggleButton
+        android:id="@+id/toggleModerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:checked="true"
+        android:textOff="@string/price_moderate"
+        android:textOn="@string/price_moderate"
+        app:layout_constraintBottom_toTopOf="@+id/suggest_place"
+        app:layout_constraintEnd_toStartOf="@+id/toggleExpensive"
+        app:layout_constraintStart_toEndOf="@+id/toggleCheap"
+        app:layout_constraintTop_toBottomOf="@+id/veggieFriendlyCheckBox" />
+
+    <ToggleButton
+        android:id="@+id/toggleExpensive"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:checked="true"
+        android:textOff="@string/price_expensive"
+        android:textOn="@string/price_expensive"
+        app:layout_constraintBottom_toTopOf="@+id/suggest_place"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/toggleModerate"
+        app:layout_constraintTop_toBottomOf="@+id/veggieFriendlyCheckBox"
+        app:layout_constraintVertical_bias="0.454" />
 
     <Button
         android:id="@+id/suggest_place"
@@ -90,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.65999997" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
@@ -99,12 +127,12 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suggest_place"
         app:layout_constraintVertical_bias="1.0"
         app:lottie_autoPlay="false" />
 

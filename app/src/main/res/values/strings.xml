@@ -2,4 +2,9 @@
     <string name="app_name">Where To?</string>
     <string name="hello_world">Hey there, hungry fellow!</string>
     <string name="where_to_go">Where To Go Today?</string>
+    <string name="price_cheap">$</string>
+    <string name="price_moderate">$$</string>
+    <string name="price_expensive">$$$</string>
+    <string name="veggie_friendly">Veggie Friendly?</string>
+    <string name="willyouDrive">Do you want to drive?</string>
 </resources>
