@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity() {
         if(!dataInitialized) {
 
             deleteDatabase()
+
             createRealDatabase(Restaurant("1117 Cafe", PriceRange.CHEAP, Transport.WALK, true))
             createRealDatabase(Restaurant("Bagel Boys", PriceRange.CHEAP, Transport.WALK, true))
             createRealDatabase(Restaurant("Tropical Smoothie", PriceRange.CHEAP, Transport.WALK, true))
@@ -110,6 +111,8 @@ class MainActivity : AppCompatActivity() {
             createRealDatabase(Restaurant("Zoes Kitchen", PriceRange.CHEAP, Transport.WALK, false))
             createRealDatabase(Restaurant("la Madeleine French Bakery and Café", PriceRange.CHEAP, Transport.WALK, true))
             createRealDatabase(Restaurant("Bawarchi Biryani", PriceRange.MODERATE, Transport.DRIVE, true))
+            createRealDatabase(Restaurant("Perimeter Sweet Tomatoes", PriceRange.CHEAP, Transport.WALK, true))
+            createRealDatabase(Restaurant("Rumi's Kitchen", PriceRange.EXPENSIVE, Transport.DRIVE, true))
 
             val editor = preferences.edit()
             editor.putBoolean("dataInitDone", true)
