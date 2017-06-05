@@ -8,59 +8,29 @@
     tools:context="com.app.kev.whereto.activities.MainActivity"
     tools:showIn="@layout/activity_main">
 
+
+
     <TextView
         android:id="@+id/hello_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/hello_world"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/veggieFriendlyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/veggieFriendlyCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:checked="true"
-        android:text="@string/veggie_friendly"
-        app:layout_constraintBottom_toTopOf="@+id/toggleModerate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hello_world" />
 
-    <CheckBox
-        android:id="@+id/driveCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:checked="false"
-        android:text="@string/willyouDrive"
-        app:layout_constraintBottom_toTopOf="@+id/veggieFriendlyCheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hello_world" />
 
     <ToggleButton
         android:id="@+id/toggleCheap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:checked="true"
         android:textOff="@string/price_cheap"
         android:textOn="@string/price_cheap"
@@ -68,9 +38,7 @@
         app:layout_constraintEnd_toStartOf="@+id/toggleModerate"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/veggieFriendlyCheckBox"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ToggleButton
         android:id="@+id/toggleModerate"
@@ -82,24 +50,20 @@
         android:textOn="@string/price_moderate"
         app:layout_constraintBottom_toTopOf="@+id/suggest_place"
         app:layout_constraintEnd_toStartOf="@+id/toggleExpensive"
-        app:layout_constraintStart_toEndOf="@+id/toggleCheap"
-        app:layout_constraintTop_toBottomOf="@+id/veggieFriendlyCheckBox" />
+        app:layout_constraintStart_toEndOf="@+id/toggleCheap" />
 
     <ToggleButton
         android:id="@+id/toggleExpensive"
         android:layout_width="92dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:checked="true"
         android:textOff="@string/price_expensive"
         android:textOn="@string/price_expensive"
         app:layout_constraintBottom_toTopOf="@+id/suggest_place"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/toggleModerate"
-        app:layout_constraintTop_toBottomOf="@+id/veggieFriendlyCheckBox"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintStart_toEndOf="@+id/toggleModerate" />
 
     <Button
         android:id="@+id/suggest_place"
@@ -135,5 +99,73 @@
         app:layout_constraintTop_toBottomOf="@+id/suggest_place"
         app:layout_constraintVertical_bias="1.0"
         app:lottie_autoPlay="false" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="#c0c0c0"
+        tools:layout_editor_absoluteY="173dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/vegetarianLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Are you a Vegetarian?"
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <Switch
+        android:id="@+id/vegetarianSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="148dp"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/vegetarianLabel"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="#c0c0c0"
+        tools:layout_editor_absoluteY="45dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:id="@+id/view" />
+
+    <TextView
+        android:id="@+id/drivingOptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Will you drive?"
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Subtitle"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/vegetarianLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Switch
+        android:id="@+id/driveOptionSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/vegetarianSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/drivingOptionLabel"
+        android:layout_marginStart="148dp"
+        app:layout_constraintHorizontal_bias="0.891" />
 
 </android.support.constraint.ConstraintLayout>
